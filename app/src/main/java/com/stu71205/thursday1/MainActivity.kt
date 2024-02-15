@@ -7,11 +7,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,180 +22,69 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column() {
-                Row {
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 1", fontSize = 20.sp)
-                    }
+            Column {
 
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 2", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 3", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 4", fontSize = 20.sp)
+                for (i in 1..4){
+
+                    if (i % 2 == 0){
+                        Row {
+                            for (i in 1..4){
+
+                                if (i % 2 == 0){
+                                    Box(
+                                        modifier = Modifier
+                                            .height(50.dp)
+                                            .width(50.dp)
+                                            .background(Color.Yellow)
+                                    )
+                                    {
+                                        Text(text = "Box ${i}", fontSize = 20.sp)
+                                    }
+                                } else {
+                                    Box(
+                                        modifier = Modifier
+                                            .height(50.dp)
+                                            .width(50.dp)
+                                            .background(Color.Red)
+                                    )
+                                    {
+                                        Text(text = "Box ${i}", fontSize = 20.sp)
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        Row {
+                            for (i in 1..4){
+
+                                if (i % 2 == 0){
+                                    Box(
+                                        modifier = Modifier
+                                            .height(50.dp)
+                                            .width(50.dp)
+                                            .background(Color.Red)
+                                    )
+                                    {
+                                        Text(text = "Box ${i}", fontSize = 20.sp)
+                                    }
+                                } else {
+                                    Box(
+                                        modifier = Modifier
+                                            .height(50.dp)
+                                            .width(50.dp)
+                                            .background(Color.Yellow)
+                                    )
+                                    {
+                                        Text(text = "Box ${i}", fontSize = 20.sp)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-
-                Row {
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 1", fontSize = 20.sp)
-                    }
-
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 2", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 3", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 4", fontSize = 20.sp)
-                    }
-                }
-
-                Row {
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 1", fontSize = 20.sp)
-                    }
-
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 2", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 3", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 4", fontSize = 20.sp)
-                    }
-                }
-
-                Row {
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 1", fontSize = 20.sp)
-                    }
-
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 2", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Red)
-                    )
-                    {
-                        Text(text = "Box 3", fontSize = 20.sp)
-                    }
-                    Box(
-                        modifier = Modifier
-                            .height(50.dp)
-                            .width(50.dp)
-                            .background(Color.Yellow)
-                    )
-                    {
-                        Text(text = "Box 4", fontSize = 20.sp)
-                    }
-                }
-                }
-
-//            Thursday1Theme {
-//                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-//                    Greeting("Android")
-//                }
-//            }
+            }
         }
     }
-}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -214,4 +100,5 @@ fun GreetingPreview() {
     Thursday1Theme {
         Greeting("Android")
     }
+}
 }
