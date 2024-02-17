@@ -22,61 +22,56 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            @Composable
+            fun boxYellow(num: Int){
+                Box(
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(50.dp)
+                        .background(Color.Yellow)
+                )
+                {
+                    Text(text = "Box $num", fontSize = 20.sp)
+                }
+            }
+
+            @Composable
+            fun boxRed(num: Int){
+                Box(
+                    modifier = Modifier
+                        .height(50.dp)
+                        .width(50.dp)
+                        .background(Color.Red)
+                )
+                {
+                    Text(text = "Box $num", fontSize = 20.sp)
+                }
+            }
+
             Column {
 
                 for (i in 1..4){
 
                     if (i % 2 == 0){
                         Row {
-                            for (i in 1..4){
+                            for (num in 1..4){
 
-                                if (i % 2 == 0){
-                                    Box(
-                                        modifier = Modifier
-                                            .height(50.dp)
-                                            .width(50.dp)
-                                            .background(Color.Yellow)
-                                    )
-                                    {
-                                        Text(text = "Box ${i}", fontSize = 20.sp)
-                                    }
+                                if (num % 2 == 0){
+                                    boxYellow(num)
                                 } else {
-                                    Box(
-                                        modifier = Modifier
-                                            .height(50.dp)
-                                            .width(50.dp)
-                                            .background(Color.Red)
-                                    )
-                                    {
-                                        Text(text = "Box ${i}", fontSize = 20.sp)
-                                    }
+                                    boxRed(num)
                                 }
                             }
                         }
                     } else {
                         Row {
-                            for (i in 1..4){
+                            for (num in 1..4){
 
-                                if (i % 2 == 0){
-                                    Box(
-                                        modifier = Modifier
-                                            .height(50.dp)
-                                            .width(50.dp)
-                                            .background(Color.Red)
-                                    )
-                                    {
-                                        Text(text = "Box ${i}", fontSize = 20.sp)
-                                    }
+                                if (num % 2 == 0){
+                                    boxRed(num)
                                 } else {
-                                    Box(
-                                        modifier = Modifier
-                                            .height(50.dp)
-                                            .width(50.dp)
-                                            .background(Color.Yellow)
-                                    )
-                                    {
-                                        Text(text = "Box ${i}", fontSize = 20.sp)
-                                    }
+                                    boxYellow(num)
                                 }
                             }
                         }
